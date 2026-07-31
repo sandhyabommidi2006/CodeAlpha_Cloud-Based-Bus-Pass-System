@@ -32,12 +32,12 @@ A Flask-based web application that allows users to apply for, manage, and track 
 ---
 
 ## How to Run
-1.
-Install Flask
-2.
-Run app.py
-3.
-Open http: http://127.0.0.1:5000
+
+1.Install Flask
+
+2.Run app.py
+
+3.Open http: http://127.0.0.1:5000
 
 ---
 
@@ -83,16 +83,6 @@ The project uses **SQLite** with two tables:
 - Password Encryption
 - Bus Route Management
 - Mobile Responsive Dashboard
-
----
-
-## 👨‍💻 Author
-
-Sandhya Rani Bommidi 
-
-B.Tech Computer Science and Systems Engineering Student
-
-Cloud Computing Project
 
 ---
 
