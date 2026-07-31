@@ -109,9 +109,11 @@ The project uses **SQLite** with two tables:
 - Bus Route Management
 - Mobile Responsive Dashboard
 
----## 👨‍💻 Author
+---
 
-**Your Name**
+## 👨‍💻 Author
+
+Sandhya Rani Bommidi 
 
 B.Tech Computer Science and Systems Engineering Student
 
