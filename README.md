@@ -51,9 +51,6 @@ The system helps:
 
 ---
 
-
----
-
 ## ⚙ Installation
 
 ### 1. Clone the repository
@@ -137,8 +134,6 @@ http://127.0.0.1:5000/
 - Reliability
 - Digital Pass Storage
 - Online Service Delivery
-
----
 
 ---
 
