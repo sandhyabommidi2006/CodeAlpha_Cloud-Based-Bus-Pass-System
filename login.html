@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            Cloud Bus Pass
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+            <li>
+                <a href="/register">Register</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+        <div class="form-card">
+
+            <h2>User Login</h2>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+
+                {% for category, message in messages %}
+
+                    <div class="alert {{ category }}">
+                        {{ message }}
+                    </div>
+
+                {% endfor %}
+
+            {% endif %}
+            {% endwith %}
+
+            <form action="/login" method="POST">
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <button type="submit" class="btn">
+                    Login
+                </button>
+
+            </form>
+
+            <br>
+
+            <p>
+                Don't have an account?
+
+                <a href="/register">
+                    Register Here
+                </a>
+            </p>
+
+            <br>
+
+            <div class="info-box">
+
+                <h3>Demo Admin Login</h3>
+
+                <p><strong>Email:</strong> admin@gmail.com</p>
+
+                <p><strong>Password:</strong> admin123</p>
+
+                <small>
+                    Create this account through the Register page before using the Admin Dashboard.
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <p>
+            © 2026 Cloud Bus Pass System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
