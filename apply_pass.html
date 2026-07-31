@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apply Bus Pass</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            Cloud Bus Pass
+        </div>
+
+        <ul>
+
+            <li><a href="/dashboard">Dashboard</a></li>
+
+            <li><a href="/my_pass">My Pass</a></li>
+
+            <li><a href="/logout">Logout</a></li>
+
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+
+            {% for category, message in messages %}
+
+                <div class="alert {{ category }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+        {% endwith %}
+
+        <div class="form-card">
+
+            <h2>Bus Pass Application</h2>
+
+            <form action="/apply_pass" method="POST">
+
+                <label>Source</label>
+
+                <input
+                    type="text"
+                    name="source"
+                    placeholder="Enter Source"
+                    required
+                >
+
+                <label>Destination</label>
+
+                <input
+                    type="text"
+                    name="destination"
+                    placeholder="Enter Destination"
+                    required
+                >
+
+                <label>Distance (KM)</label>
+
+                <input
+                    type="number"
+                    name="distance"
+                    min="1"
+                    placeholder="Enter Distance"
+                    required
+                >
+
+                <div class="info-box">
+
+                    <h3>Automatic Fare Calculation</h3>
+
+                    <p>
+                        The fare is calculated automatically based on the
+                        distance entered. This prevents incorrect pricing
+                        and ensures fair ticket generation.
+                    </p>
+
+                    <table class="price-table">
+
+                        <tr>
+                            <th>Distance</th>
+                            <th>Fare</th>
+                        </tr>
+
+                        <tr>
+                            <td>1 - 5 KM</td>
+                            <td>₹50</td>
+                        </tr>
+
+                        <tr>
+                            <td>6 - 10 KM</td>
+                            <td>₹100</td>
+                        </tr>
+
+                        <tr>
+                            <td>11 - 20 KM</td>
+                            <td>₹150</td>
+                        </tr>
+
+                        <tr>
+                            <td>21 - 40 KM</td>
+                            <td>₹250</td>
+                        </tr>
+
+                        <tr>
+                            <td>Above 40 KM</td>
+                            <td>₹350</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <button type="submit" class="btn">
+
+                    Apply Bus Pass
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <p>
+
+            © 2026 Cloud Bus Pass System
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
