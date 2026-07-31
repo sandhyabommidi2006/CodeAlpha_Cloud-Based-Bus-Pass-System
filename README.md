@@ -31,25 +31,13 @@ A Flask-based web application that allows users to apply for, manage, and track 
 
 ---
 
-How to Run
+## How to Run
 1.
 Install Flask
 2.
 Run app.py
 3.
 Open http: http://127.0.0.1:5000
-
----
-
-## 👤 Default Admin Login
-
-```
-Email:
-admin@gmail.com
-
-Password:
-(Create this account manually in the database or register using this email.)
-```
 
 ---
 
@@ -72,21 +60,6 @@ The project uses **SQLite** with two tables:
 - Distance
 - Amount
 - Status
-
----
-
-## 🔄 Workflow
-
-1. Register
-2. Login
-3. Apply for Bus Pass
-4. Enter Travel Details
-5. Fare Calculated Automatically
-6. Complete Payment
-7. Bus Pass Generated
-8. Admin Reviews Application
-9. Admin Approves or Rejects
-10. User Checks Pass Status
 
 ---
 
