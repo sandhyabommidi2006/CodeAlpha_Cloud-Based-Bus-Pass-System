@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            Cloud Bus Pass
+        </div>
+
+        <ul>
+
+            <li><a href="/dashboard">Dashboard</a></li>
+
+            <li><a href="/my_pass">My Pass</a></li>
+
+            <li><a href="/logout">Logout</a></li>
+
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+
+            {% for category, message in messages %}
+
+                <div class="alert {{ category }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+        {% endwith %}
+
+        <div class="card">
+
+            <h2>Bus Pass Payment</h2>
+
+            <table class="pass-table">
+
+                <tr>
+                    <th>Pass ID</th>
+                    <td>{{ buspass['pass_id'] }}</td>
+                </tr>
+
+                <tr>
+                    <th>Source</th>
+                    <td>{{ buspass['source'] }}</td>
+                </tr>
+
+                <tr>
+                    <th>Destination</th>
+                    <td>{{ buspass['destination'] }}</td>
+                </tr>
+
+                <tr>
+                    <th>Distance</th>
+                    <td>{{ buspass['distance'] }} KM</td>
+                </tr>
+
+                <tr>
+                    <th>Total Amount</th>
+                    <td>₹{{ buspass['amount'] }}</td>
+                </tr>
+
+            </table>
+
+            <br>
+
+            <div class="info-box">
+
+                <h3>Select Payment Method</h3>
+
+                <form method="POST">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="UPI"
+                        required>
+                    UPI
+
+                    <br><br>
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="Credit Card">
+                    Credit / Debit Card
+
+                    <br><br>
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="Net Banking">
+                    Net Banking
+
+                    <br><br>
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="Wallet">
+                    Wallet
+
+                    <br><br>
+
+                    <button
+                        type="submit"
+                        class="btn">
+
+                        Pay ₹{{ buspass['amount'] }}
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <p>
+
+            © 2026 Cloud Bus Pass System
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
