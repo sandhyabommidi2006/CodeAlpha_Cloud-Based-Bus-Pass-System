@@ -1,0 +1,363 @@
+/* ===========================
+   General Styles
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#333;
+}
+
+/* ===========================
+   Navigation Bar
+=========================== */
+
+nav{
+    background:#0077b6;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:#ffd166;
+}
+
+/* ===========================
+   Container
+=========================== */
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:40px auto;
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.card,
+.form-card{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.15);
+    margin-bottom:25px;
+}
+
+.card h1,
+.card h2,
+.form-card h2{
+    margin-bottom:20px;
+    color:#0077b6;
+}
+
+.card p{
+    line-height:1.7;
+}
+
+/* ===========================
+   Dashboard Cards
+=========================== */
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.dashboard-card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 8px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+.dashboard-card h3{
+    color:#0077b6;
+    margin-bottom:15px;
+}
+
+.dashboard-card p{
+    margin-bottom:20px;
+    line-height:1.6;
+}
+
+/* ===========================
+   Forms
+=========================== */
+
+form{
+    width:100%;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+    border:1px solid #0077b6;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 24px;
+    background:#0077b6;
+    color:white;
+    text-decoration:none;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.btn:hover{
+    background:#023e8a;
+}
+
+.small-btn{
+    display:inline-block;
+    padding:8px 12px;
+    text-decoration:none;
+    color:white;
+    border-radius:4px;
+    font-size:14px;
+    margin:2px;
+}
+
+.approve-btn{
+    background:green;
+}
+
+.reject-btn{
+    background:#ff9800;
+}
+
+.delete-btn{
+    background:#d62828;
+}
+
+.danger-btn{
+    background:#d62828;
+}
+
+/* ===========================
+   Tables
+=========================== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table th{
+    background:#0077b6;
+    color:white;
+    padding:12px;
+}
+
+table td{
+    padding:12px;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+table tr:nth-child(even){
+    background:#f2f2f2;
+}
+
+.pass-table th{
+    width:35%;
+}
+
+.price-table{
+    margin-top:15px;
+}
+
+/* ===========================
+   Alerts
+=========================== */
+
+.alert{
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.success{
+    background:#d4edda;
+    color:#155724;
+}
+
+.danger{
+    background:#f8d7da;
+    color:#721c24;
+}
+
+.warning{
+    background:#fff3cd;
+    color:#856404;
+}
+
+.info{
+    background:#d1ecf1;
+    color:#0c5460;
+}
+
+/* ===========================
+   Status Colors
+=========================== */
+
+.approved{
+    color:green;
+    font-weight:bold;
+}
+
+.pending{
+    color:orange;
+    font-weight:bold;
+}
+
+.rejected{
+    color:red;
+    font-weight:bold;
+}
+
+/* ===========================
+   Feature List
+=========================== */
+
+.feature-list{
+    margin-top:20px;
+    margin-left:20px;
+}
+
+.feature-list li{
+    margin-bottom:10px;
+}
+
+/* ===========================
+   Information Box
+=========================== */
+
+.info-box{
+    background:#eef7ff;
+    border-left:5px solid #0077b6;
+    padding:20px;
+    margin-top:20px;
+    border-radius:5px;
+}
+
+.info-box h3{
+    color:#0077b6;
+    margin-bottom:10px;
+}
+
+.info-box p,
+.info-box li{
+    line-height:1.7;
+}
+
+.info-box ul{
+    margin-left:20px;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+    margin-top:50px;
+    background:#0077b6;
+    color:white;
+    text-align:center;
+    padding:18px;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav ul{
+        flex-direction:column;
+        margin-top:15px;
+    }
+
+    nav ul li{
+        margin:10px 0;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+    }
+
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+    .container{
+        width:95%;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+}
