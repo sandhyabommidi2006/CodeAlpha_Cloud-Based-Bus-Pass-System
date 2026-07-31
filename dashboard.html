@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            Cloud Bus Pass
+        </div>
+
+        <ul>
+
+            <li><a href="/dashboard">Dashboard</a></li>
+
+            <li><a href="/apply_pass">Apply Pass</a></li>
+
+            <li><a href="/my_pass">My Pass</a></li>
+
+            <li><a href="/logout">Logout</a></li>
+
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+
+            {% for category, message in messages %}
+
+                <div class="alert {{ category }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+        {% endwith %}
+
+        <div class="card">
+
+            <h2>Welcome</h2>
+
+            <h3>{{ email }}</h3>
+
+            <p>
+                Welcome to the Cloud Bus Pass Management System.
+                From this dashboard you can apply for a new bus pass,
+                view your current pass and check its approval status.
+            </p>
+
+        </div>
+
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card">
+
+                <h3>Apply Bus Pass</h3>
+
+                <p>
+                    Apply online for your bus pass with automatic
+                    fare calculation based on travel distance.
+                </p>
+
+                <a href="/apply_pass" class="btn">
+                    Apply Now
+                </a>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h3>View My Pass</h3>
+
+                <p>
+                    View your unique Bus Pass ID, travel details,
+                    fare amount and approval status.
+                </p>
+
+                <a href="/my_pass" class="btn">
+                    View Pass
+                </a>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h3>Pass Status</h3>
+
+                {% if buspass %}
+
+                    <p>
+
+                        <strong>Status :</strong>
+
+                        {% if buspass['status'] == 'Approved' %}
+
+                            <span class="approved">
+                                Approved
+                            </span>
+
+                        {% elif buspass['status'] == 'Rejected' %}
+
+                            <span class="rejected">
+                                Rejected
+                            </span>
+
+                        {% else %}
+
+                            <span class="pending">
+                                Pending
+                            </span>
+
+                        {% endif %}
+
+                    </p>
+
+                {% else %}
+
+                    <p>
+                        No bus pass application submitted yet.
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <p>
+
+            © 2026 Cloud Bus Pass System
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
