@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            Cloud Bus Pass - Admin
+        </div>
+
+        <ul>
+
+            <li><a href="/admin">Applications</a></li>
+
+            <li><a href="/users">Users</a></li>
+
+            <li><a href="/logout">Logout</a></li>
+
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+
+            {% for category, message in messages %}
+
+                <div class="alert {{ category }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+        {% endwith %}
+
+        <div class="card">
+
+            <h2>Bus Pass Applications</h2>
+
+            {% if applications %}
+
+            <table class="admin-table">
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Pass ID</th>
+                    <th>User Email</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Distance</th>
+                    <th>Fare</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+
+                </tr>
+
+                {% for app in applications %}
+
+                <tr>
+
+                    <td>{{ app['id'] }}</td>
+
+                    <td>{{ app['pass_id'] }}</td>
+
+                    <td>{{ app['user_email'] }}</td>
+
+                    <td>{{ app['source'] }}</td>
+
+                    <td>{{ app['destination'] }}</td>
+
+                    <td>{{ app['distance'] }} KM</td>
+
+                    <td>₹{{ app['amount'] }}</td>
+
+                    <td>
+
+                        {% if app['status']=="Approved" %}
+
+                            <span class="approved">
+                                Approved
+                            </span>
+
+                        {% elif app['status']=="Rejected" %}
+
+                            <span class="rejected">
+                                Rejected
+                            </span>
+
+                        {% else %}
+
+                            <span class="pending">
+                                Pending
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+                    <td>
+
+                        <a href="/approve/{{ app['id'] }}"
+                           class="small-btn approve-btn">
+
+                           Approve
+
+                        </a>
+
+                        <a href="/reject/{{ app['id'] }}"
+                           class="small-btn reject-btn">
+
+                           Reject
+
+                        </a>
+
+                        <a href="/delete_application/{{ app['id'] }}"
+                           class="small-btn delete-btn"
+                           onclick="return confirm('Delete this application?');">
+
+                           Delete
+
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </table>
+
+            {% else %}
+
+                <h3>No Applications Found.</h3>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <p>
+
+            © 2026 Cloud Bus Pass System - Admin Panel
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
