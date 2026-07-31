@@ -31,7 +31,7 @@ A Flask-based web application that allows users to apply for, manage, and track 
 
 ---
 
-## How to Run
+## ⚡ How to Run
 
 1.Install Flask
 
