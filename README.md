@@ -27,15 +27,17 @@ A Flask-based web application that allows users to apply for, manage, and track 
 - HTML5
 - CSS3
 - Bootstrap 5
-- Jinja2 Templates
+
 
 ---
 
-### 5. Open Browser
-
-```
-http://127.0.0.1:5000
-```
+How to Run
+1.
+Install Flask
+2.
+Run app.py
+3.
+Open http: http://127.0.0.1:5000
 
 ---
 
