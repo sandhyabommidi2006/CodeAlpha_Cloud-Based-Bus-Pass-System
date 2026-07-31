@@ -50,38 +50,13 @@ The system helps:
 - Bootstrap 5
 
 ---
+## How to Run
 
-## ⚙ Installation
+1.Install Flask
 
-### 1. Clone the repository
+2.Run app.py
 
-```bash
-git clone https://github.com/yourusername/cloud-based-bus-pass-system.git
-```
-
-### 2. Move into the project folder
-
-```bash
-cd cloud-based-bus-pass-system
-```
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Run the application
-
-```bash
-python app.py
-```
-
-### 5. Open your browser
-
-```
-http://127.0.0.1:5000/
-```
+3.Open http: http://127.0.0.1:5000
 
 ---
 
@@ -98,18 +73,6 @@ http://127.0.0.1:5000/
 6. Receive a unique digital bus pass.
 7. Track application status.
 8. Admin approves or rejects applications.
-
----
-
-## 💰 Automatic Fare Calculation
-
-| Distance | Fare |
-|----------|------|
-| 0–5 km | ₹50 |
-| 6–10 km | ₹100 |
-| 11–20 km | ₹150 |
-| 21–40 km | ₹250 |
-| Above 40 km | ₹350 |
 
 ---
 
